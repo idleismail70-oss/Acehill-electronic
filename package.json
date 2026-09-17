@@ -1,0 +1,9 @@
+{
+  "name": "ace-hill-electronics",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Ace Hill Electronics product showcase and enquiry website",
+  "scripts": {
+    "start": "npx --yes serve . -l 4173 --no-port-switching"
+  }
+}

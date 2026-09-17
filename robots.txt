@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://acehillonlinemarket.co.ke/sitemap.xml
