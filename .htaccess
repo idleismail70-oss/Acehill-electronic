@@ -9,6 +9,7 @@ ErrorDocument 404 /404.html
   AddType image/jpeg .jpg .jpeg .jfif
   AddType image/webp .webp
   AddType text/javascript .js
+  AddType application/xml .xml
 </IfModule>
 
 <IfModule mod_headers.c>
@@ -27,6 +28,20 @@ ErrorDocument 404 /404.html
   RewriteRule ^ https://acehillonlinemarket.co.ke%{REQUEST_URI} [L,R=301]
 
   RewriteRule ^favicon\.ico$ images/favicon.svg [L]
+
+  # Old flat SEO URLs → locations/
+  RewriteRule ^cctv-camera-garissa\.html$ /locations/garissa/cctv.html [L,R=301]
+  RewriteRule ^cctv-camera-nairobi\.html$ /locations/nairobi/cctv.html [L,R=301]
+  RewriteRule ^electronics-garissa\.html$ /locations/garissa/ [L,R=301]
+  RewriteRule ^electronics-nairobi\.html$ /locations/nairobi/ [L,R=301]
+  RewriteRule ^iphone-garissa\.html$ /locations/garissa/iphone.html [L,R=301]
+  RewriteRule ^iphone-nairobi\.html$ /locations/nairobi/iphone.html [L,R=301]
+  RewriteRule ^phones-garissa\.html$ /locations/garissa/phones.html [L,R=301]
+  RewriteRule ^phones-nairobi\.html$ /locations/nairobi/phones.html [L,R=301]
+  RewriteRule ^laptops-garissa\.html$ /locations/garissa/laptops.html [L,R=301]
+  RewriteRule ^laptops-nairobi\.html$ /locations/nairobi/laptops.html [L,R=301]
+  RewriteRule ^phone-repair-garissa\.html$ /locations/garissa/phone-repair.html [L,R=301]
+  RewriteRule ^phone-repair-nairobi\.html$ /locations/nairobi/phone-repair.html [L,R=301]
 </IfModule>
 
 <IfModule mod_expires.c>

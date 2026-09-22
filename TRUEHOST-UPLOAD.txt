@@ -3,44 +3,43 @@ TRUEHOST DEPLOYMENT — acehillonlinemarket.co.ke
 
 This site is static HTML/CSS/JS. No Node, PHP, or database is required.
 
-1. Domain and SSL
-   - In Truehost, point acehillonlinemarket.co.ke to this hosting account.
-   - cPanel → SSL/TLS Status → Issue a free Let's Encrypt certificate.
-   - Wait until https://acehillonlinemarket.co.ke loads without a browser warning.
+FOLDER LAYOUT (keep this shape in public_html)
+---------------------------------------------
+  index.html, about.html, contact.html, products.html, product.html,
+  services.html, special-orders.html, 404.html
+  css/   js/   data/   images/
+  locations/
+    index.html
+    garissa/   (index, cctv, phones, iphone, laptops, phone-repair)
+    nairobi/   (same)
+  robots.txt, sitemap.xml, .htaccess
 
-2. Upload files
-   - Zip the site using acehillonlinemarket-truehost.zip (created next to this project)
-     OR zip these items yourself:
-       .htaccess, 404.html, index.html, products.html, product.html,
-       services.html, special-orders.html, about.html, contact.html,
-       robots.txt, sitemap.xml, css/, js/, data/, images/
-   - Do NOT upload package.json or serve.json (not needed on Truehost).
-   - cPanel → File Manager → public_html
-   - Settings → Show Hidden Files (so .htaccess is visible)
-   - Delete the default Truehost placeholder index page if one exists.
-   - Upload the zip → Extract into public_html
-   - If extract creates a subfolder, MOVE the files up so index.html
-     sits directly in public_html (not public_html/ace-ill/index.html).
+1. Domain and SSL
+   - Point acehillonlinemarket.co.ke to this hosting account.
+   - cPanel → SSL/TLS Status → free Let's Encrypt certificate.
+   - Wait until https://acehillonlinemarket.co.ke loads cleanly.
+
+2. Upload
+   - Upload the folders above into public_html (Show Hidden Files for .htaccess).
+   - Do NOT upload package.json, serve.json, or docs/.
+   - index.html must sit directly in public_html.
 
 3. Check
-   - https://acehillonlinemarket.co.ke           (home)
+   - https://acehillonlinemarket.co.ke/
    - https://acehillonlinemarket.co.ke/products.html
-   - https://acehillonlinemarket.co.ke/contact.html
-   - Search and WhatsApp still work (products.json must be at /data/products.json)
+   - https://acehillonlinemarket.co.ke/locations/garissa/cctv.html
+   - https://acehillonlinemarket.co.ke/locations/nairobi/phone-repair.html
 
-4. After go-live
-   - Google Search Console → add acehillonlinemarket.co.ke
-   - Submit https://acehillonlinemarket.co.ke/sitemap.xml
-   - Create a Google Business Profile for Garissa and Nairobi
+4. Google ranking (required — tags alone are not enough)
+   A. Search Console → add property → submit sitemap.xml
+      Request indexing for locations/garissa/ and key topic pages.
+   B. Google Business Profile for Garissa and Nairobi (main local ranking).
+   C. Categories: Electronics store + phone repair / CCTV where offered.
+   D. Website link: https://acehillonlinemarket.co.ke
+   E. Photos + customer reviews.
 
 5. Product photos
-   - Put photos in public_html/images/products/
-   - Use JPG, PNG or WebP. Keep each file under about 400KB.
-   - In data/products.json set:
-       "image": "images/products/your-photo.jpg"
-   - Extra photos on the same product:
-       "images": ["images/products/your-photo.jpg", "images/products/side.jpg"]
-   - Replace both products.json and the photo files after you add stock.
-   - If a photo is missing, the site shows a category picture instead.
+   - Upload to public_html/images/products/
+   - In data/products.json set "image": "images/products/your-photo.jpg"
 
-Permissions: folders 755, files 644. That is the cPanel default.
+Permissions: folders 755, files 644.
