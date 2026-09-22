@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/yhulerqp/acehillonlinemarket.co.ke/
+    - /bin/cp -RF css js images data locations "$DEPLOYPATH"
+    - /bin/cp -f *.html robots.txt sitemap.xml "$DEPLOYPATH"
+    - /bin/cp -f .htaccess "$DEPLOYPATH"
